@@ -21,7 +21,7 @@
 
 
 
-Ulrich
+Partie 2 de correction
 
 [vagrant@minikube mini-projet-k8s]$ history
     1  minikube start --driver=none
