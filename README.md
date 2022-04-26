@@ -202,3 +202,30 @@ Puis je reseigne les informations demandées:
 - mot de passe
 - Votre e-mail
 - Cliquer sur le bouton**Installer WordPress**
+
+
+***********************************************************************
+
+# Commandes impératives
+1. Pour créer le namespace
+```
+kubectl create namespace [nom_namespace] --dry-run=client -o yaml
+```
+On prend la sortie que nous mettons dans le **manifeste** puis on l'exécute
+
+```
+kubectl apply -f namespace.yaml
+```
+2. Pour créer le *deployment* du pod *db_MySql*
+
+```
+kubectl create deploy db_MySql --image mysql:5.7 --replicas=1 --dry-run=client -o yaml > deploy_mysql.yaml
+```
+Quand je valide la commande, j'ai le manifeste qui est directement créé.
+
+3. Pour créer le *deployment* du pod *Wordpress*
+
+```
+kubectl create deploy Wordpress --image mysql:5.7 --replicas=1 --dry-run=client -o yaml > deploy_wordpress.yaml
+```
+Quand je valide la commande, j'ai le manifeste qui est directement créé.
